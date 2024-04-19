@@ -9,7 +9,7 @@ You can create a webserver by installing web packages on a Linux EC2 instance. F
 2. **Create an EC2 Instance:**
    - Create an EC2 machine with the desired hardware specifications and choose an Amazon Machine Image (AMI) (e.g., Ubuntu, Amazon Linux, etc.).
 
-3. **Manual Installation:**
+3. **Installation of web packages:**
    - There are two ways to turn a Linux machine into a webserver:
      1. **Manual Installation:**
         - Log in to the Linux machine.
