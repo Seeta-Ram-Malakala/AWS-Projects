@@ -3,16 +3,16 @@
 You can create a webserver by installing web packages on a Linux EC2 instance. Follow these steps:
 
 1. **Log in to AWS Console:**
-   - Enter your credentials and log in to the AWS console home.
+   - Enter your credentials and log in to the [AWS console home](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_eu-north-1_9edbdae3fc9563a1&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=Gj8I0x32h8kxuebTM8sKjgWNP9UlXqI2FgNrk9NnReA&code_challenge_method=SHA-256).
    - Navigate to the EC2 Dashboard.
 
 2. **Create an EC2 Instance:**
-   - Create an EC2 machine with the desired hardware specifications and choose an Amazon Machine Image (AMI) (e.g., Ubuntu, Amazon Linux, etc.).
+   - Create an [EC2 machine](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html) with the desired hardware specifications and choose an Amazon Machine Image (AMI) (e.g., Ubuntu, Amazon Linux, etc.).
 
 3. **Installation of web packages:**
    - There are two ways to turn a Linux machine into a webserver:
      1. **Manual Installation:**
-        - Log in to the Linux machine.
+        - [Connect to Linux machine](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-to-linux-instance.html).
         - Update the package lists on your instance:
           - For Amazon Linux: `sudo yum update`
           - For Ubuntu: `sudo apt update`
