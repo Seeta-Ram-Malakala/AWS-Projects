@@ -25,9 +25,9 @@ You can create a webserver by installing web packages on a Linux EC2 instance. F
         - Create or copy your website files (HTML, CSS, JavaScript, etc.) to the appropriate directory:
           - Apache: `/var/www/html/`
           - Nginx: `/var/www/`
-   2. **Using Bootstrap Scripts:**
-      - Alternatively, you can provide bootstrap scripts under USER DATA at the time of creating the EC2 instance.
-      - After creating the security group, navigate to advanced settings and add the following bootstrap script in USER DATA:
+     2. **Using Bootstrap Scripts:**
+        - Alternatively, you can provide bootstrap scripts under USER DATA at the time of creating the EC2 instance.
+        - After creating the security group, navigate to advanced settings and add the following bootstrap script in USER DATA:
 
             ```bash
             #!/bin/sh
