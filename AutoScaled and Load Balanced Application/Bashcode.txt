@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sudo yum update -y
+sudo yum install httpd -y
+sudo service httpd start
+chkconfig httpd on
+cd /var/www/html
+cat >> index.html << EOF
+<html><body> this is ec2 instance </body></html>
+EOF
