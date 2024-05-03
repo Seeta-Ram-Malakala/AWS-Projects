@@ -37,6 +37,37 @@ CloudWatch is a service that helps in Monitoring, Alerting, Reporting, and Loggi
 2. [Create an SNS topic](https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html) for the alarm to get notified when the CPU utilization exceeds the given threshold.
 3. [Create an alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html) in the CloudWatch dashboard with the metric as CPU utilization and mention the threshold as 80%. Add the SNS topic which created earlier.
 4. Connect to the EC2 instance and create a Python file using VI editor/ VIM editor/ Nano editor with the following Python code to increase the CPU utilization forcefully.
+```
+import time
+import math 
+import sys 
+import multiprocessing
+ 
+def generate_cpu_load(interval=int(sys.argv[1]),utilization=int(sys.argv[2])):
+    "Generate a utilization % for a duration of interval seconds"
+    start_time = time.time()
+    for i in range(0,int(interval)):
+        print("About to do some arithmetic")
+        while time.time()-start_time < utilization/100.0:
+            a = math.sqrt(64*64*64*64*64)
+        print(str(i) + ". About to sleep")
+        time.sleep(1-utilization/100.0)
+        start_time += 1
+ 
+#----START OF SCRIPT
+if __name__=='__main__':
+    print("No of cpu:", multiprocessing.cpu_count())
+    if len(sys.argv)>2:
+        processes = []
+        for _ in range (multiprocessing.cpu_count()):
+            p = multiprocessing.Process(target =generate_cpu_load)
+            p.start()
+            processes.append(p)
+        for process in processes:
+            process.join()        
+    else:
+        print("Usage:\n python %s interval utilization"%__file__)
+```
 5. Run the Python script which was saved earlier.
 6. Observe the CPU utilization graph increases gradually and exceeds the threshold, which is 80%.
 7. You will receive an SNS notification saying that CPU utilization exceeded 80% to your email/mobile number based on the SNS topic you created.
